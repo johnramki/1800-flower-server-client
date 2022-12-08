@@ -1,0 +1,27 @@
+.main {
+    background: #4c0080;
+   
+}
+.title,.subtitle{
+    color: #fff;
+}
+.grouped {
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.controlSearch {
+    border: 2px solid gray;
+    width: 80%;
+    border-radius: 4px;
+}
+.controlSearch::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+.typo{
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-box-clamp:3;
+    overflow:hidden;
+}
