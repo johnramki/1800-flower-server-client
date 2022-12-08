@@ -4,6 +4,7 @@ import { editPost } from "../store/post-slice";
 
 const Form = (props) => {
   const inputName = useRef();
+  const textareaName = useRef();
   const dispatch = useDispatch();
   const postId = props.id;
   const post = useSelector((state) => state.post);
@@ -11,7 +12,7 @@ const Form = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(editPost({ title: inputName.current.value, id: postId }));
+    dispatch(editPost({ title: inputName.current.value, id: postId}));
     props.handleClose();
   };
   return (
@@ -35,7 +36,12 @@ const Form = (props) => {
               placeholder="Title"
               autoComplete="off"
             ></input>
-          </div>
+          </div><br></br>
+          <div className="form-outline">
+          <label className="form-label" for="textAreaExample">Post Description</label>
+          <textarea ref={textareaName} defaultValue={item.body} disabled className="form-control" id="textAreaExample1" rows="4"></textarea>
+          
+        </div>
           <button
             style={{ margin: "10px" }}
             onClick={submitHandler}
