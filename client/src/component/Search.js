@@ -1,8 +1,6 @@
 
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import IconButton from "@mui/material/IconButton";
-import SearchIcon from "@mui/icons-material/Search";
 import Stack from '@mui/material/Stack';
 
 import { useEffect, useState } from "react";
@@ -10,7 +8,6 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchPost, setFilter, postDelete, setInputSearchValue } from "../store/post-slice";
 import Form from "./Form";
-import Post from "./Post";
 import Posts from "./Posts";
 import styles from './post.module.css';
 export const Search = () => {
@@ -44,12 +41,6 @@ export const Search = () => {
       dispatch(postDelete(id));
   }
 
-  const searchonClick = () => {
-    console.log('Input field',inputSearchValue)
-    dispatch(setFilter("He was"));
-  }
-
-console.log('auto',post.auto)
   return (
     <section className="section">
       <div className="container table-responsive py-5">
@@ -58,14 +49,6 @@ console.log('auto',post.auto)
             className={styles.grouped}
             
           >
-           {/*  <div className={styles.control}>
-              <input
-                onChange={(e) => dispatch(setFilter(e.target.value))}
-                className={styles.controlSearch}
-                placeholder="Search By Title"
-                type="text"
-              />
-            </div> */}
             <Stack spacing={2} sx={{ width: 300 }}>
               <Autocomplete
                 id="free-solo-demo"
@@ -83,10 +66,6 @@ console.log('auto',post.auto)
                 renderInput={(params) => <TextField {...params} label="Post Search" />}
               />
             </Stack>
-        
-        {/* <IconButton onClick={(e)=>searchonClick()} type="submit" aria-label="search">
-          <SearchIcon style={{ fill: "blue" }} />
-        </IconButton> */}
           </div>
         </div>
         <div style={{gap:"1rem",display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(250px,1fr))"}}>
