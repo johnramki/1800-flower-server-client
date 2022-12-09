@@ -9,15 +9,15 @@ const Post = (props) => {
 
     const typostyle = {
         display:"-webkit-box",
-        webkitBoxOrient : "vertical",
-        webkitLineClamp :"2",
+        WebkitBoxOrient : "vertical",
+        WebkitLineClamp :"2",
         overflow : "hidden"
     }
 
     const typostyledesc = {
         display:"-webkit-box",
-        webkitBoxOrient : "vertical",
-        webkitLineClamp :"6",
+        WebkitBoxOrient : "vertical",
+        WebkitLineClamp :"6",
         overflow : "hidden"
     }
     
