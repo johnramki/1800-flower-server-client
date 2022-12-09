@@ -19,6 +19,7 @@ const postSlice = createSlice({
     editPost: (state, { payload }) => {
       let item = state.post.find((x) => x.id === payload.id);
       item.title = payload.title;
+      item.body = payload.body;
       const updatedOptions = state.post.map((p) => {
         return { label: p.title };
       });
@@ -64,7 +65,6 @@ export function fetchPost() {
     try {
       const response = await fetch("post");
       const data = await response.json();
-      console.log(data)
       const updatedOptions = data.posts.map((p) => {
         return { label: p.title };
       });
