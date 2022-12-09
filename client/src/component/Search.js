@@ -1,4 +1,3 @@
-
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Stack from '@mui/material/Stack';
@@ -46,19 +45,16 @@ export const Search = () => {
       <div className="container table-responsive py-5">
         <div>
           <div
-            className={styles.grouped}
-            
+            className={styles.grouped} 
           >
             <Stack spacing={2} sx={{ width: 300 }}>
               <Autocomplete
                 id="free-solo-demo"
                 sx={{ width: 1100 }}
                 onChange={(event, newValue) => {
-                  console.log(newValue);
                   dispatch(setFilter(newValue))
                 }}
                 onInputChange={(event, newInputValue) => {
-                  console.log("Test",newInputValue)
                   dispatch(setInputSearchValue(newInputValue))
                 }}
                 freeSolo
