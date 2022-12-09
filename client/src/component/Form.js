@@ -12,7 +12,7 @@ const Form = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(editPost({ title: inputName.current.value, id: postId}));
+    dispatch(editPost({ title: inputName.current.value, id: postId,body:textareaName.current.value}));
     props.handleClose();
   };
   return (
@@ -39,7 +39,7 @@ const Form = (props) => {
           </div><br></br>
           <div className="form-outline">
           <label className="form-label" for="textAreaExample">Post Description</label>
-          <textarea ref={textareaName} defaultValue={item.body} disabled className="form-control" id="textAreaExample1" rows="4"></textarea>
+          <textarea ref={textareaName} defaultValue={item.body} className="form-control" id="textAreaExample1" rows="4"></textarea>
           
         </div>
           <button
